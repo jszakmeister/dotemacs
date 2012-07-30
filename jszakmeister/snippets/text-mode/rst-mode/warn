@@ -1,0 +1,8 @@
+#name : warning
+#expand-env: ((yas/indent-line 'none))
+# --
+.. warning::
+
+   ${1:information goes here}
+
+$0

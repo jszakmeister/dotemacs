@@ -1,0 +1,6 @@
+#name : highlight
+#expand-env: ((yas/indent-line 'none))
+# --
+.. highlight:: ${1:lang}
+
+$0

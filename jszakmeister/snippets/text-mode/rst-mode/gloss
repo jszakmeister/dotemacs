@@ -1,0 +1,9 @@
+#name : glossary
+#expand-env: ((yas/indent-line 'none))
+# --
+.. glossary::
+
+   ${2:term}
+      ${3:definition}
+
+$0

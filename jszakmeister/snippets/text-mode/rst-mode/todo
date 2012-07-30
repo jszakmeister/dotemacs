@@ -1,0 +1,8 @@
+#name : "todo" block
+#expand-env: ((yas/indent-line 'none))
+# --
+.. todo::
+
+   ${1:information goes here}
+
+$0

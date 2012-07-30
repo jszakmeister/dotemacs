@@ -1,0 +1,8 @@
+#name : rubric
+#expand-env: ((yas/indent-line 'none))
+# --
+.. rubric:: ${1:title}
+
+   ${2:information goes here}
+
+$0

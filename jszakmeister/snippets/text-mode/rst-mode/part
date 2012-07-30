@@ -1,0 +1,7 @@
+#name : Chapter title
+# --
+${1:$(make-string (string-width text) ?\#)}
+${1:part}
+${1:$(make-string (string-width text) ?\#)}
+
+$0

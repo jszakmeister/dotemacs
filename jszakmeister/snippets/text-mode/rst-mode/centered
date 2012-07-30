@@ -1,0 +1,5 @@
+#name : Center a line of text
+# --
+.. centered:: ${1:line of text}
+
+$0

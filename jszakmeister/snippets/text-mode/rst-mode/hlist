@@ -1,0 +1,9 @@
+#name : horizontal list
+#expand-env: ((yas/indent-line 'none))
+# --
+.. hlist::
+   :columns: ${1:2}
+
+   * ${2:bullet list}
+
+$0

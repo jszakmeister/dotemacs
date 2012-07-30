@@ -1,0 +1,7 @@
+#name : Term markup
+#expand-env: ((yas/indent-line 'none))
+# --
+${1:term}
+   ${2:definition}
+
+$0
