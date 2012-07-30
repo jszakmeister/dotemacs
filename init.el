@@ -22,7 +22,8 @@
                       marmalade oddmuse scpaste
                       swank-cdt haml-mode sass-mode
                       highlight-80+ json
-                      org color-theme-blackboard))
+                      org color-theme-blackboard
+                      rainbow-delimiters))
 
 ;(dolist (p my-packages)
 ;  (when (not (package-installed-p p))
