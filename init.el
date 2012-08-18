@@ -19,6 +19,7 @@
 
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings
                       starter-kit-eshell zenburn-theme color-theme yasnippet
+		      anything anything-config anything-match-plugin
                       clojure-mode clojure-test-mode
                       markdown-mode yaml-mode
                       tuareg haskell-mode
