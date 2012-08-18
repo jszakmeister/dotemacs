@@ -159,3 +159,9 @@
   () (set (make-local-variable 'truncate-lines) nil))
 
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
+;; Bring in Markdown mode
+(autoload 'markdown-mode "markdown-mode"
+	  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.md" . markdown-mode) auto-mode-alist))
