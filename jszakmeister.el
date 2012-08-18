@@ -8,18 +8,6 @@
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
 
-; Customize the highlighting of parens.  The default was to confusing
-; to look at.
-(setq hl-paren-colors '("DarkOrange1" "firebrick3" "firebrick4" "IndianRed4"))
-
-(add-hook 'clojure-mode-hook
-          '(lambda ()
-             (highlight-parentheses-mode)
-             (setq autopair-handle-action-fns
-                   (list 'autopair-default-handle-action
-                         '(lambda (action pair pos-before)
-                            (hl-paren-color-update))))))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Taken from Tim's emacs config
@@ -160,3 +148,6 @@
 
 (eval-after-load "ispell"
   (setq-default ispell-program-name "hunspell"))
+
+(require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
