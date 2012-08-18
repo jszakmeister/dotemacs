@@ -1,3 +1,5 @@
+;; -*-no-byte-compile: t; -*-
+
 ;; Packages
 ;(setq dotfiles-dir (file-name-directory
 ;                    (or load-file-name (buffer-file-name))))
