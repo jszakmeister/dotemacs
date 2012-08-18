@@ -154,3 +154,8 @@
 
 ;; Turn off the system beep
 (setq visible-bell t)
+
+(defun ido-disable-line-trucation
+  () (set (make-local-variable 'truncate-lines) nil))
+
+(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
