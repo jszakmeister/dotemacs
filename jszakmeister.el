@@ -1,6 +1,9 @@
 ; Turn off the visible bell
 (setq visible-bell nil)
 
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file)
+
 ; Change the background color for current line
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
