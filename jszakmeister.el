@@ -151,3 +151,6 @@
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+;; Turn off the system beep
+(setq visible-bell t)
