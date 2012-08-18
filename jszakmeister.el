@@ -165,3 +165,9 @@
 	  "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; Display ido results vertically, rather than horizontally
+(setq ido-decorations
+  (quote ("\n-> " "" "\n   " "\n   ..." "[" "]"
+          " [No match]" " [Matched]" " [Not readable]"
+          " [Too big]" " [Confirm]")))
