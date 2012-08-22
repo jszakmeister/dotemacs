@@ -182,3 +182,15 @@
                   (if (> (line-number-at-pos) 1)
                       (next-line))
                   (beginning-of-line)))
+
+(ido-mode nil)
+(ido-ubiquitous nil)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching nil)
+
+(require 'helm-config)
+(helm-mode 1)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-x f") 'helm-for-files)
