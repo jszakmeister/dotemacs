@@ -4,6 +4,9 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file)
 
+; Set the font
+(set-face-attribute 'default nil :font "Droid Sans Mono-16")
+
 ; Change the background color for current line
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
