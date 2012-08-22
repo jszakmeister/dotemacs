@@ -174,3 +174,11 @@
   (quote ("\n-> " "" "\n   " "\n   ..." "[" "]"
           " [No match]" " [Matched]" " [Not readable]"
           " [Too big]" " [Confirm]")))
+
+(global-set-key (kbd "M-h")
+                (lambda ()
+                  (interactive)
+                  (mark-paragraph)
+                  (if (> (line-number-at-pos) 1)
+                      (next-line))
+                  (beginning-of-line)))
