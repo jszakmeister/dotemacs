@@ -1,9 +1,6 @@
 ; Turn off the visible bell
 (setq visible-bell nil)
 
-(setq custom-file (concat user-emacs-directory "custom.el"))
-(load custom-file)
-
 ; Set the font
 (set-face-attribute 'default nil :font "Droid Sans Mono-16")
 
@@ -27,10 +24,10 @@
 ;; (setq lpr-header-switches t)
 
 ;;;; Proper color printing with dark backgrounds
-(require 'my-print)
+;(require 'my-print)
 
 ;;;; Tag customization and bindings
-(require 'my-tags)
+;(require 'my-tags)
 
 ;;;; Default to indent with spaces, not tabs
 (setq-default indent-tabs-mode nil)
@@ -50,20 +47,20 @@
 
 ;;;; Set default mode line appearance
 ;; Move function display before mode display
-(setq mode-line-format
-      '("-"
-	mode-line-mule-info
-	mode-line-modified
-	mode-line-frame-identification
-	mode-line-buffer-identification
-	"  "
-	mode-line-position
-	(vc-mode vc-mode)
-	"  "
-	(which-func-mode ("" which-func-format "--"))
-	mode-line-modes
-	(global-mode-string ("--" global-mode-string))
-	"-%-"))
+;; (setq mode-line-format
+;;       '("-"
+;;         mode-line-mule-info
+;;         mode-line-modified
+;;         mode-line-frame-identification
+;;         mode-line-buffer-identification
+;;         "  "
+;;         mode-line-position
+;;         (vc-mode vc-mode)
+;;         "  "
+;;         (which-func-mode ("" which-func-format "--"))
+;;         mode-line-modes
+;;         (global-mode-string ("--" global-mode-string))
+;;         "-%-"))
 
 ;; Show which function name in mode line
 (which-function-mode t)
@@ -73,22 +70,8 @@
 
 ;;;; End of Tim's config
 
-;; Load some plugins
-(require 'yasnippet)
-
-;; Develop in ~/emacs.d/user/snippets, but also load the default ones
-(setq yas-snippet-dirs
-      (list (concat user-emacs-directory "jszakmeister/snippets")
-            (concat user-emacs-directory "elpa/yasnippet-0.6.1/snippets")))
-
-(yas-global-mode 1)
-
 ;;; Load my color theme
-(require 'color-theme)
-(load-file "~/.emacs.d/blackboard.el")
-(autoload 'color-theme-empty-void "empty-void-theme" "" t nil)
-(autoload 'color-theme-john "john-theme" "" t nil)
-(color-theme-john)
+(load-theme 'john t)
 
 ;;; Don't clutter up directories with files~
 ;(setq auto-save-file-name-transforms
@@ -181,15 +164,6 @@
                       (next-line))
                   (beginning-of-line)))
 
-(ido-mode nil)
-(ido-ubiquitous nil)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching nil)
-
-(require 'helm-config)
-(helm-mode 1)
-
-(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-for-files)
 
