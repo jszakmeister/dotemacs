@@ -12,6 +12,7 @@ backups
 elim
 eshell/history
 eshell/lastdir
+helm-c-adaptive-history
 mail
 news
 tramp
