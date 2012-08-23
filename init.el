@@ -116,9 +116,10 @@
 (require 'yasnippet)
 
 ;; Develop in ~/emacs.d/user/<username>/snippets, but also load the default ones
-(setq yas-snippet-dirs
-      (list (concat dotemacs-user-directory "snippets")
-            (concat user-emacs-directory "elpa/yasnippet-0.6.1/snippets")))
+(dotemacs-add-path-to-list 'yas-snippet-dirs
+                           (concat user-emacs-directory "snippets"))
+(dotemacs-add-path-to-list 'yas-snippet-dirs
+                           (concat dotemacs-user-directory "snippets"))
 
 (yas-global-mode 1)
 
