@@ -166,7 +166,8 @@
       ediff-window-setup-function 'ediff-setup-windows-plain
       oddmuse-directory (concat user-emacs-directory "oddmuse")
       save-place-file (concat user-emacs-directory "places")
-      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+      backup-directory-alist `(("." . ,(file-name-as-directory
+                                         (concat user-emacs-directory "backups"))))
       diff-switches "-u")
 
 (when window-system
