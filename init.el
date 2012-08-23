@@ -143,3 +143,20 @@
 ;; Bring in user's customizations
 (setq custom-file (concat dotemacs-user-directory "custom.el"))
 (load custom-file)
+
+(setq inhibit-startup-message t
+      color-theme-is-global t
+      sentence-end-double-space t
+      shift-select-mode nil
+      mouse-yank-at-point t
+      uniquify-buffer-name-style 'forward
+      whitespace-style '(face trailing lines-tail tabs)
+      whitespace-line-column 78
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      oddmuse-directory (concat user-emacs-directory "oddmuse")
+      save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+      diff-switches "-u")
+
+(add-to-list 'safe-local-variable-values '(lexical-binding . t))
+(add-to-list 'safe-local-variable-values '(whitespace-line-column . 78))
