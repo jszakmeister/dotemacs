@@ -37,3 +37,6 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(require 'helm-config)
+(helm-mode 1)
