@@ -18,8 +18,8 @@
         (concat user-emacs-directory system-name ".el")
       dotemacs-user-directory
         (concat user-emacs-directory
-		(file-name-as-directory "user")
-		(file-name-as-directory dotemacs-user-name))
+                (file-name-as-directory "user")
+                (file-name-as-directory dotemacs-user-name))
       dotemacs-user-before-config
         (concat dotemacs-user-directory "dotemacs-before.el")
       dotemacs-user-after-config
