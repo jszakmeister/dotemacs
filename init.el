@@ -69,6 +69,7 @@
     haml-mode
     haskell-mode
     helm
+    helm-projectile
     highlight-80+
     json
     less-css-mode
@@ -111,11 +112,20 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; Helm
+;; Helm and Projectile
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (helm-mode 1)
+
+;; projectile is a project management mode
+(require 'projectile)
+(projectile-global-mode t)
+(global-set-key (kbd "C-c f") 'helm-projectile)
+
+(require 'helm-match-plugin)
+(require 'helm-projectile)
 
 ;; Yasnippet
 (require 'yasnippet)
