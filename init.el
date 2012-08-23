@@ -2,6 +2,16 @@
 
 ;; We require Emacs 24 or better
 
+;; Turn off mouse interface early in startup to avoid momentary display
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+        (when (fboundp mode) (funcall mode -1)))
+
+(defun dotemacs-turn-off-tool-bar ()
+  (if (functionp 'tool-bar-mode) (tool-bar-mode -1)))
+
+;; Can't do it at launch or emacsclient won't always honor it
+(add-hook 'before-make-frame-hook 'dotemacs-turn-off-tool-bar)
+
 (setq dotemacs-user-name user-login-name)
 
 (setq dotemacs-system-config
@@ -158,6 +168,13 @@
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
       diff-switches "-u")
+
+(when window-system
+  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (tooltip-mode -1)
+  (mouse-wheel-mode t)
+  (blink-cursor-mode -1))
+
 
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 78))
