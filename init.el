@@ -23,9 +23,9 @@
                       starter-kit-eshell zenburn-theme color-theme yasnippet
                       undo-tree powerline fill-column-indicator
                       clojure-mode clojure-test-mode
-		      align-cljlet cmake-mode ctags ctags-update
-		      d-mode durendal less-css-mode
-		      lorem-ipsum nginx-mode nose
+                      align-cljlet cmake-mode ctags ctags-update
+                      d-mode durendal less-css-mode
+                      lorem-ipsum nginx-mode nose
                       markdown-mode yaml-mode
                       tuareg haskell-mode
                       marmalade oddmuse scpaste
