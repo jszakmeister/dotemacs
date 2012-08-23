@@ -18,13 +18,16 @@
 
 (package-initialize)
 
-;(when (null package-archive-contents)
-;  (package-refresh-contents))
+(when (null package-archive-contents)
+  (package-refresh-contents))
 
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings
                       starter-kit-eshell zenburn-theme color-theme yasnippet
-		      anything anything-config anything-match-plugin
+		      undo-tree powerline
                       clojure-mode clojure-test-mode
+		      align-cljlet cmake-mode ctags ctags-update
+		      d-mode durendal less-css-mode
+		      lorem-ipsum nginx-mode nose
                       markdown-mode yaml-mode
                       tuareg haskell-mode
                       marmalade oddmuse scpaste
@@ -33,6 +36,6 @@
                       org color-theme-blackboard
                       rainbow-delimiters))
 
-;(dolist (p my-packages)
-;  (when (not (package-installed-p p))
-;    (package-install p)))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
