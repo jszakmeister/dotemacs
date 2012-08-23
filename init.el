@@ -5,8 +5,6 @@
 ;                    (or load-file-name (buffer-file-name))))
 ;(add-to-list 'load-path dotfiles-dir)
 
-(add-to-list 'load-path "~/.emacs.d/elpa/color-theme-6.5.5")
-(add-to-list 'load-path "~/.emacs.d/elpa/rainbow-delimiters-1.3.4")
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/helm")
 
