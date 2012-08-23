@@ -1,9 +1,6 @@
 ; Turn off the visible bell
 (setq visible-bell nil)
 
-; Set the font
-(set-face-attribute 'default nil :font "Droid Sans Mono-16")
-
 ; Change the background color for current line
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
@@ -88,9 +85,6 @@
 (set-face-attribute 'default nil
                     :family "Droid Sans Mono" :height 160)
 
-;;; Bring in the better ido fuzzy matcher
-;(require 'better-ido-matching)
-
 ;; Enable ANSI colors in shell mode
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -139,23 +133,13 @@
 ;; Turn off the system beep
 (setq visible-bell t)
 
-(defun ido-disable-line-trucation
-  () (set (make-local-variable 'truncate-lines) nil))
-
-(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-
 ;; Bring in Markdown mode
 (autoload 'markdown-mode "markdown-mode"
           "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-;; Display ido results vertically, rather than horizontally
-(setq ido-decorations
-  (quote ("\n-> " "" "\n   " "\n   ..." "[" "]"
-          " [No match]" " [Matched]" " [Not readable]"
-          " [Too big]" " [Confirm]")))
-
+;; Mark a paragraph, but don't include the leading blank line
 (global-set-key (kbd "M-h")
                 (lambda ()
                   (interactive)
