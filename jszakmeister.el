@@ -75,15 +75,13 @@
 
 ;; Load some plugins
 (require 'yasnippet)
-(yas/initialize)
 
-;; Develop in ~/emacs.d/snippets, but also load the default ones
-(setq yas/root-directory
+;; Develop in ~/emacs.d/user/snippets, but also load the default ones
+(setq yas-snippet-dirs
       (list (concat user-emacs-directory "jszakmeister/snippets")
             (concat user-emacs-directory "elpa/yasnippet-0.6.1/snippets")))
 
-;; Map `yas/load-directory' to every element
-(mapc 'yas/load-directory yas/root-directory)
+(yas-global-mode 1)
 
 ;;; Load my color theme
 (require 'color-theme)
