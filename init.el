@@ -179,11 +179,29 @@
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 78))
 
-;; Default to indent with spaces, not tabs
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+              indicate-empty-lines t
+              show-trailing-whitespace t
+              imenu-auto-rescan t)
 
-;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+(defalias 'auto-tail-revert-mode 'tail-mode)
+
+;; Seed the random-number generator
+(random t)
+
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green4")
+     (set-face-foreground 'magit-diff-del "red3")))
 
 ;; Desktop saving
 
@@ -196,3 +214,7 @@
 (defun dotemacs-desktop-no-desktop-file-hook ()
   (desktop-save-mode 0))
 (add-hook 'desktop-no-desktop-file-hook 'dotemacs-desktop-no-desktop-file-hook)
+
+;; Magit
+(require 'magit)
+(global-set-key (kbd "C-c g") 'magit-status)
