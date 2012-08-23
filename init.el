@@ -21,7 +21,7 @@
 
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings
                       starter-kit-eshell zenburn-theme color-theme yasnippet
-		      undo-tree powerline
+                      undo-tree powerline fill-column-indicator
                       clojure-mode clojure-test-mode
 		      align-cljlet cmake-mode ctags ctags-update
 		      d-mode durendal less-css-mode
