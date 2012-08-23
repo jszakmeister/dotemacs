@@ -192,3 +192,6 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-for-files)
+
+(require 'powerline)
+(powerline-default)
