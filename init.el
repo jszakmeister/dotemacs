@@ -57,10 +57,6 @@
 
 (defvar dotemacs-packages
   '(
-    ;starter-kit
-    ;starter-kit-lisp
-    ;starter-kit-bindings
-    ;starter-kit-eshell
     align-cljlet
     clojure-mode
     clojure-test-mode
@@ -72,6 +68,7 @@
     fill-column-indicator
     haml-mode
     haskell-mode
+    helm
     highlight-80+
     json
     less-css-mode
@@ -93,9 +90,6 @@
     yasnippet
     ))
 
-;; Bring in helm
-(add-to-list 'load-path
-   (concat user-emacs-directory "helm"))
 
 (require 'package)
 (add-to-list 'package-archives
