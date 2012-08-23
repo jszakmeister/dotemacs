@@ -1,6 +1,3 @@
-; Turn off the visible bell
-(setq visible-bell nil)
-
 ; Change the background color for current line
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
@@ -25,22 +22,6 @@
 
 ;;;; Tag customization and bindings
 ;(require 'my-tags)
-
-;;;; Default to indent with spaces, not tabs
-(setq-default indent-tabs-mode nil)
-
-;;;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
-
-;;;; Desktop saving
-;; Load a desktop file if it exists
-(desktop-save-mode t)
-;; Disable desktop save mode if no file was found
-;; This keeps desktops from being saved without explicitly
-;; calling desktop-save somewhere first
-(defun my-desktop-no-desktop-file-hook ()
-  (desktop-save-mode 0))
-(add-hook 'desktop-no-desktop-file-hook 'my-desktop-no-desktop-file-hook)
 
 ;;;; Set default mode line appearance
 ;; Move function display before mode display

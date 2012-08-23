@@ -161,3 +161,21 @@
 
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 78))
+
+;; Default to indent with spaces, not tabs
+(setq-default indent-tabs-mode nil)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;; Desktop saving
+
+;; Load a desktop file if it exists
+(desktop-save-mode t)
+
+;; Disable desktop save mode if no file was found
+;; This keeps desktops from being saved without explicitly
+;; calling desktop-save somewhere first
+(defun dotemacs-desktop-no-desktop-file-hook ()
+  (desktop-save-mode 0))
+(add-hook 'desktop-no-desktop-file-hook 'dotemacs-desktop-no-desktop-file-hook)
