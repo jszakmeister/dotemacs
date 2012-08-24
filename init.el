@@ -26,7 +26,9 @@
       dotemacs-user-after-config
         (concat dotemacs-user-directory "dotemacs-after.el")
       dotemacs-user-system-config
-        (concat dotemacs-user-directory (symbol-name system-type) ".el"))
+        (concat dotemacs-user-directory (symbol-name system-type) ".el")
+      dotemacs-user-system-name-config
+        (concat dotemacs-user-directory system-name ".el"))
 
 (defun dotemacs-add-path-to-list (list-var path)
   (when (file-exists-p path)
@@ -50,6 +52,7 @@
  `(progn
     (dolist (config '(,dotemacs-system-config
                       ,dotemacs-user-system-config
+                      ,dotemacs-user-system-name-config
                       ,dotemacs-user-after-config))
       (dotemacs-load-exists config))))
 
