@@ -159,7 +159,7 @@
 
 ;; Bring in user's customizations
 (setq custom-file (concat dotemacs-user-directory "custom.el"))
-(load custom-file)
+(dotemacs-load-exists custom-file)
 
 (setq inhibit-startup-message t
       color-theme-is-global t
