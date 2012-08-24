@@ -230,3 +230,7 @@
 ;; Automatically update TAGS on save
 (require 'ctags-update)
 (ctags-update-minor-mode 1)
+
+;; Turn on auto revert globally.  This will let Emacs automatically
+;; re-read the file if changes on disk.
+(global-auto-revert-mode t)
