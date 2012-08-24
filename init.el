@@ -16,7 +16,7 @@
       (or (getenv "DOTEMACS_USER") user-login-name))
 
 (setq dotemacs-system-config
-        (concat user-emacs-directory system-name ".el")
+        (concat user-emacs-directory (symbol-name system-type) ".el")
       dotemacs-user-directory
         (concat user-emacs-directory
                 (file-name-as-directory "user")
@@ -26,7 +26,7 @@
       dotemacs-user-after-config
         (concat dotemacs-user-directory "dotemacs-after.el")
       dotemacs-user-system-config
-        (concat dotemacs-user-directory system-name ".el"))
+        (concat dotemacs-user-directory (symbol-name system-type) ".el"))
 
 (defun dotemacs-add-path-to-list (list-var path)
   (when (file-exists-p path)
@@ -47,13 +47,11 @@
       (eval form))))
 
 (dotemacs-eval-after-init
- '(progn
-    (when (file-exists-p dotemacs-system-config)
-      (load dotemacs-system-config))
-    (when (file-exists-p dotemacs-user-system-config)
-      (load dotemacs-user-system-config))
-    (when (file-exists-p dotemacs-user-after-config)
-      (load dotemacs-user-after-config))))
+ `(progn
+    (dolist (config '(,dotemacs-system-config
+                      ,dotemacs-user-system-config
+                      ,dotemacs-user-after-config))
+      (dotemacs-load-exists config))))
 
 
 (defvar dotemacs-packages
