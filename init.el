@@ -224,3 +224,7 @@
 ;; Magit
 (require 'magit)
 (global-set-key (kbd "C-c g") 'magit-status)
+
+;; Automatically update TAGS on save
+(require 'ctags-update)
+(ctags-update-minor-mode 1)
