@@ -12,7 +12,8 @@
 ;; Can't do it at launch or emacsclient won't always honor it
 (add-hook 'before-make-frame-hook 'dotemacs-turn-off-tool-bar)
 
-(setq dotemacs-user-name user-login-name)
+(setq dotemacs-user-name
+      (or (getenv "DOTEMACS_USER") user-login-name))
 
 (setq dotemacs-system-config
         (concat user-emacs-directory system-name ".el")
