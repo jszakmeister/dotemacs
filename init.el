@@ -38,6 +38,10 @@
   (when (file-exists-p path)
     (load path)))
 
+(defun dotemacs-add-to-list (list-var list-to-add)
+  (dolist (item list-to-add)
+    (add-to-list list-var item)))
+
 ;; Took this from the starter-kit
 (defun dotemacs-eval-after-init (form)
   "Add `(lambda () FORM)' to `after-init-hook'.
@@ -113,6 +117,27 @@
 (dolist (p dotemacs-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+;; Ignore a number of files for completion
+(dotemacs-add-to-list 'completion-ignored-extensions
+                      '(".o"
+                        ".obj"
+                        ".a"
+                        ".lib"
+                        ".so"
+                        ".bak"
+                        ".swp"
+                        "tags"
+                        "TAGS"
+                        "opt"
+                        ".ncb"
+                        ".plg"
+                        ".elf"
+                        "cscope.out"
+                        ".ecc"
+                        ".exe"
+                        ".ilk"
+                        ".pyc"))
 
 ;; Helm and Projectile
 (require 'helm-config)
