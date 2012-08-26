@@ -259,3 +259,17 @@
 ;; Turn on auto revert globally.  This will let Emacs automatically
 ;; re-read the file if changes on disk.
 (global-auto-revert-mode t)
+
+;; Lisp-related
+(eval-after-load 'paredit
+  ;; need a binding that works in the terminal
+  '(progn
+     (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
+     (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
+
+(dolist (mode '(scheme emacs-lisp lisp clojure clojurescript))
+  (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
+            'paredit-mode))
+
+(define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
+(define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
