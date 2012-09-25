@@ -142,3 +142,6 @@
 (setq fci-rule-width 1)
 (setq fci-rule-color "grey17")
 (setq-default fill-column 78)
+
+(require 'evil)
+(evil-mode 1)
