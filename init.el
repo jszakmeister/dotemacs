@@ -67,6 +67,7 @@
     clojure-mode
     clojure-test-mode
     cmake-mode
+    color-moccur
     ctags
     ctags-update
     d-mode
@@ -273,3 +274,6 @@
 
 (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
+
+;; Color grep
+(require 'color-moccur)
