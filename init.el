@@ -104,6 +104,8 @@
 ;             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
+;(add-to-list 'package-archives
+;             '("myelpa" . "http://localhost:8081/packages/"))
 
 ;; Let the user get an opportunity to change things early on
 ;; This is intentionally run before package-intialize to allow
