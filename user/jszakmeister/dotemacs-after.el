@@ -169,24 +169,23 @@
                  (let* ((active (eq (frame-selected-window) (selected-window)))
                         (face1 (if active 'powerline-active1 'powerline-inactive1))
                         (face2 (if active 'powerline-active2 'powerline-inactive2))
-                        (lhs (list
-			      (powerline-raw evil-mode-line-tag 'powerline-normal 'l)
-			      ;(powerline-evil-mode-line-tag)
-                              (powerline-arrow-right 'powerline-normal nil)
-                              (powerline-raw "%*" nil 'l)
-                              (powerline-buffer-size nil 'l)
-                              (powerline-buffer-id nil 'l)
+                        (lhs (append
+			      ;(powerline-raw evil-mode-line-tag 'powerline-normal 'l)
+			      (powerline-evil-mode-line-tag)
+			      (list
+                               (powerline-raw "%*" nil 'l)
+                               (powerline-buffer-size nil 'l)
+                               (powerline-buffer-id nil 'l)
 
-                              (powerline-raw " ")
-                              (powerline-arrow-right nil face1)
+                               (powerline-raw " ")
+                               (powerline-arrow-right nil face1)
 
-                              (powerline-major-mode face1 'l)
-                              (powerline-raw mode-line-process face1 'l)
+                               (powerline-major-mode face1 'l)
+                               (powerline-raw mode-line-process face1 'l)
 
-                              (powerline-arrow-right face1 face2)
+                               (powerline-arrow-right face1 face2)
 
-                              (powerline-vc face2)
-                              ))
+                               (powerline-vc face2))))
                         (rhs (list
                               (powerline-raw global-mode-string face2 'r)
 
