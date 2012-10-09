@@ -143,6 +143,16 @@
   "Powerline face for Normal mode."
   :group 'powerline)
 
+(defface powerline-insert '((t (:background "DodgerBlue4"
+                                :foreground "white"
+				;; Once we get the whole mode-line shaded, use these
+				;; settings.
+				;:background "white"
+                                ;:foreground "DodgerBlue4"
+		                :inherit mode-line)))
+  "Powerline face for Insert mode."
+  :group 'powerline)
+
 (defface powerline-visual '((t (:background "DarkOrange1"
                                 :foreground "DarkOrange4"
 		                :inherit mode-line)))
@@ -154,8 +164,8 @@
 						(powerline-raw "N " 'powerline-normal 'l)
                                                 (powerline-arrow-right 'powerline-normal nil)))
 	((string= " <I> " evil-mode-line-tag) (list
-					       (powerline-raw "Insert " 'powerline-normal 'l)
-                                               (powerline-arrow-right 'powerline-normal nil)))
+					       (powerline-raw "Insert " 'powerline-insert 'l)
+                                               (powerline-arrow-right 'powerline-insert nil)))
 	((string= " <V> " evil-mode-line-tag) (list
 					       (powerline-raw "Visual " 'powerline-visual 'l)
                                                (powerline-arrow-right 'powerline-visual nil)))
