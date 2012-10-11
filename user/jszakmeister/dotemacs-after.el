@@ -135,6 +135,27 @@
 (require 'evil)
 (evil-mode 1)
 
+(defun switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(define-key evil-normal-state-map ",,d" 'kill-this-buffer)
+
+(define-key evil-motion-state-map " " 'switch-to-previous-buffer)
+(define-key evil-motion-state-map (kbd "C-d") 'evil-delete-char)
+(define-key evil-motion-state-map [home] 'evil-beginning-of-line)
+(define-key evil-motion-state-map [end] 'evil-end-of-line)
+
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map
+  (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-insert-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-insert-state-map "\C-n" 'evil-complete-next)
+(define-key evil-insert-state-map "\C-p" 'evil-complete-previous)
+(define-key evil-insert-state-map [home] 'evil-beginning-of-line)
+(define-key evil-insert-state-map [end] 'evil-end-of-line)
+
 (require 'powerline)
 
 (defface powerline-normal '((t (:background "green yellow"
