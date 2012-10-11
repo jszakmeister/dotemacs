@@ -139,38 +139,38 @@
 
 (defface powerline-normal '((t (:background "green yellow"
                                 :foreground "green4"
-		                :inherit mode-line)))
+                                :inherit mode-line)))
   "Powerline face for Normal mode."
   :group 'powerline)
 
 (defface powerline-insert '((t (:background "DodgerBlue4"
                                 :foreground "white"
-				;; Once we get the whole mode-line shaded, use these
-				;; settings.
-				;:background "white"
+                                ;; Once we get the whole mode-line shaded, use these
+                                ;; settings.
+                                ;:background "white"
                                 ;:foreground "DodgerBlue4"
-		                :inherit mode-line)))
+                                :inherit mode-line)))
   "Powerline face for Insert mode."
   :group 'powerline)
 
 (defface powerline-visual '((t (:background "DarkOrange1"
                                 :foreground "DarkOrange4"
-		                :inherit mode-line)))
+                                :inherit mode-line)))
   "Powerline face for Visual mode."
   :group 'powerline)
 
 (defun powerline-evil-mode-line-tag ()
   (cond ((string= " <N> " evil-mode-line-tag) (list
-						(powerline-raw "N " 'powerline-normal 'l)
+                                                (powerline-raw "N " 'powerline-normal 'l)
                                                 (powerline-arrow-right 'powerline-normal nil)))
-	((string= " <I> " evil-mode-line-tag) (list
-					       (powerline-raw "Insert " 'powerline-insert 'l)
+        ((string= " <I> " evil-mode-line-tag) (list
+                                               (powerline-raw "Insert " 'powerline-insert 'l)
                                                (powerline-arrow-right 'powerline-insert nil)))
-	((string= " <V> " evil-mode-line-tag) (list
-					       (powerline-raw "Visual " 'powerline-visual 'l)
+        ((string= " <V> " evil-mode-line-tag) (list
+                                               (powerline-raw "Visual " 'powerline-visual 'l)
                                                (powerline-arrow-right 'powerline-visual nil)))
-	(t (list
-	    (powerline-raw evil-mode-line-tag nil 'l)
+        (t (list
+            (powerline-raw evil-mode-line-tag nil 'l)
             (powerline-arrow-right nil nil)))))
 
 (setq-default mode-line-format
@@ -180,9 +180,9 @@
                         (face1 (if active 'powerline-active1 'powerline-inactive1))
                         (face2 (if active 'powerline-active2 'powerline-inactive2))
                         (lhs (append
-			      ;(powerline-raw evil-mode-line-tag 'powerline-normal 'l)
-			      (powerline-evil-mode-line-tag)
-			      (list
+                              ;(powerline-raw evil-mode-line-tag 'powerline-normal 'l)
+                              (powerline-evil-mode-line-tag)
+                              (list
                                (powerline-raw "%*" nil 'l)
                                (powerline-buffer-size nil 'l)
                                (powerline-buffer-id nil 'l)
