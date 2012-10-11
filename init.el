@@ -78,6 +78,7 @@
     helm
     helm-projectile
     highlight-80+
+    jinja2-mode
     json
     less-css-mode
     lorem-ipsum
