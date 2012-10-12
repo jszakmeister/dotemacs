@@ -12,6 +12,10 @@
 ;; Can't do it at launch or emacsclient won't always honor it
 (add-hook 'before-make-frame-hook 'dotemacs-turn-off-tool-bar)
 
+;; Turn off the 3d effect for the mode-line in the gui.  Note: loading a theme
+;; may turn it back on.
+(set-face-attribute 'mode-line nil :box nil)
+
 (setq dotemacs-user-name
       (or (getenv "DOTEMACS_USER") user-login-name))
 

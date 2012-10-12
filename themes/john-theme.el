@@ -58,7 +58,7 @@
  `(font-lock-warning-face ((t (:bold t :foreground "pink"))))
  `(gui-element ((t (:background "#D4D0C8" :foreground "black"))))
  `(region ((t (:background "#253B76"))))
- `(mode-line ((t (:background "grey75" :foreground "black"))))
+ `(mode-line ((t (:background "grey75" :foreground "black" :box nil))))
  `(highlight ((t (:background "#222222"))))
  `(highline-face ((t (:background "SeaGreen"))))
  `(italic ((t (nil))))
