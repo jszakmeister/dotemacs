@@ -201,6 +201,12 @@
   "Powerline face for Visual mode."
   :group 'powerline)
 
+(defface powerline-emacs '((t (:background "sienna4"
+                               :foreground "white"
+                               :inherit mode-line)))
+  "Powerline face for Emacs mode."
+  :group 'powerline)
+
 (defun powerline-evil-mode-line-tag ()
   (cond ((string= " <N> " evil-mode-line-tag) (list
                                                 (powerline-raw "N " 'powerline-normal 'l)
@@ -211,6 +217,9 @@
         ((string= " <V> " evil-mode-line-tag) (list
                                                (powerline-raw "Visual " 'powerline-visual 'l)
                                                (powerline-arrow-right 'powerline-visual nil)))
+        ((string= " <E> " evil-mode-line-tag) (list
+                                               (powerline-raw "Emacs " 'powerline-emacs 'l)
+                                               (powerline-arrow-right 'powerline-emacs nil)))
         (t (list
             (powerline-raw evil-mode-line-tag nil 'l)
             (powerline-arrow-right nil nil)))))
