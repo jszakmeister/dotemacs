@@ -1,6 +1,24 @@
-; Change the background color for current line
+;; Change the background color for current line
 (require 'hl-line)
 (set-face-background 'hl-line "#111")
+
+;; Show me matching parens all the time, without delay
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
+
+(require 'highlight-parentheses)
+
+; Customize the highlighting of parens.  The default was to confusing
+; to look at.
+(setq hl-paren-colors
+      '("DarkOrange1" "firebrick3" "firebrick4" "IndianRed4"))
+
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

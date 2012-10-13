@@ -82,6 +82,7 @@
     helm
     helm-projectile
     highlight-80+
+    highlight-parentheses
     jinja2-mode
     json
     less-css-mode
