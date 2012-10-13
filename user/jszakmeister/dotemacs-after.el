@@ -151,11 +151,11 @@
 (define-key evil-insert-state-map
   (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
-(define-key evil-insert-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-insert-state-map "\C-e" 'end-of-line)
 (define-key evil-insert-state-map "\C-n" 'evil-complete-next)
 (define-key evil-insert-state-map "\C-p" 'evil-complete-previous)
 (define-key evil-insert-state-map [home] 'evil-beginning-of-line)
-(define-key evil-insert-state-map [end] 'evil-end-of-line)
+(define-key evil-insert-state-map [end] 'end-of-line)
 (define-key evil-insert-state-map [remap newline] 'evil-ret)
 (define-key evil-insert-state-map [remap newline-and-indent] 'evil-ret)
 
