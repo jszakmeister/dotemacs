@@ -247,3 +247,25 @@
 (setq fci-rule-width 1)
 (setq fci-rule-color "grey17")
 (setq-default fill-column 78)
+
+;; Taken from Brian Carper's blog:
+;;  http://briancarper.net/blog/531/vim-vs-emacs-indenting-text-before-copying
+(defun expand-region-linewise ()
+  (interactive)
+  (let ((start (region-beginning))
+        (end (region-end)))
+   (goto-char start)
+   (beginning-of-line)
+   (set-mark (point))
+   (goto-char end)
+   (unless (bolp) (end-of-line))))
+
+(defun markdown-copy ()
+  (interactive)
+  (save-excursion
+    (expand-region-linewise)
+    (indent-rigidly (region-beginning) (region-end) 4)
+    (clipboard-kill-ring-save (region-beginning) (region-end))
+    (indent-rigidly (region-beginning) (region-end) -4)))
+
+(define-key evil-visual-state-map ",mc" 'markdown-copy)
