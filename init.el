@@ -193,6 +193,8 @@
 (setq whitespace-action
       '(auto-cleanup warn-read-only))
 
+(require 'nose)
+
 ;; Bring in user's customizations
 (setq custom-file (concat dotemacs-user-directory "custom.el"))
 (dotemacs-load-exists custom-file)
