@@ -81,7 +81,6 @@
     haskell-mode
     helm
     helm-projectile
-    highlight-80+
     highlight-parentheses
     jinja2-mode
     json
@@ -184,11 +183,12 @@
                              (file-name-as-directory
                                (concat dotemacs-user-directory "themes"))))
 
-;; Use whitespace mode. This is awesomeness.
+;; Highlight lines that extend over 80 characters.  Also, show embedded tabs,
+;; and spaces at the end of lines.
 (require 'whitespace)
 (global-whitespace-mode t)
-;; (setq whitespace-style
-;;       '(face empty indentation lines-tail newline tabs trailing))
+(setq whitespace-style
+       '(face lines-tail tabs trailing))
 (setq whitespace-action
       '(auto-cleanup warn-read-only))
 
