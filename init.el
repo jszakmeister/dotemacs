@@ -88,6 +88,7 @@
     lorem-ipsum
     markdown-mode
     marmalade
+    melpa
     nginx-mode
     nose
     org
