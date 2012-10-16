@@ -95,7 +95,6 @@
     powerline
     rainbow-delimiters
     sass-mode
-    scpaste
     swank-cdt
     tuareg
     undo-tree
