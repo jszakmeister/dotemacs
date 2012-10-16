@@ -90,7 +90,6 @@
     marmalade
     nginx-mode
     nose
-    oddmuse
     org
     powerline
     rainbow-delimiters
