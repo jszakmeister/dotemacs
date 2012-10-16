@@ -99,6 +99,7 @@
     swank-cdt
     tuareg
     undo-tree
+    virtualenv
     yaml-mode
     yasnippet
     ))
