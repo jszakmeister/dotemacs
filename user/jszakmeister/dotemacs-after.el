@@ -160,6 +160,8 @@
 
 (define-key evil-normal-state-map ",,d" 'kill-this-buffer)
 
+(define-key evil-visual-state-map ",c" 'comment-or-uncomment-region)
+
 (define-key evil-motion-state-map " " 'switch-to-previous-buffer)
 (define-key evil-motion-state-map (kbd "C-d") 'evil-delete-char)
 (define-key evil-motion-state-map [home] 'evil-beginning-of-line)
