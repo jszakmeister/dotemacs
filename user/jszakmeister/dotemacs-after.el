@@ -166,13 +166,26 @@
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
+;; Taken from StackOverflow:
+;;     http://stackoverflow.com/questions/145291/smart-home-in-emacs
+(defun smart-beginning-of-line ()
+  "Move point to first non-whitespace character or beginning-of-line.
+
+Move point to the first non-whitespace character on this line.
+If point was already at that position, move point to beginning of line."
+  (interactive) ; Use (interactive "^") in Emacs 23 to make shift-select work
+  (let ((oldpos (point)))
+    (back-to-indentation)
+    (and (= oldpos (point))
+         (beginning-of-line))))
+
 (define-key evil-normal-state-map ",,d" 'kill-this-buffer)
 
 (define-key evil-visual-state-map ",c" 'comment-or-uncomment-region)
 
 (define-key evil-motion-state-map " " 'switch-to-previous-buffer)
 (define-key evil-motion-state-map (kbd "C-d") 'evil-delete-char)
-(define-key evil-motion-state-map [home] 'evil-beginning-of-line)
+(define-key evil-motion-state-map [home] 'smart-beginning-of-line)
 (define-key evil-motion-state-map [end] 'evil-end-of-line)
 
 (setcdr evil-insert-state-map nil)
@@ -182,7 +195,7 @@
 (define-key evil-insert-state-map "\C-e" 'end-of-line)
 (define-key evil-insert-state-map "\C-n" 'evil-complete-next)
 (define-key evil-insert-state-map "\C-p" 'evil-complete-previous)
-(define-key evil-insert-state-map [home] 'evil-beginning-of-line)
+(define-key evil-insert-state-map [home] 'smart-beginning-of-line)
 (define-key evil-insert-state-map [end] 'end-of-line)
 (define-key evil-insert-state-map [remap newline] 'evil-ret)
 (define-key evil-insert-state-map [remap newline-and-indent] 'evil-ret)
