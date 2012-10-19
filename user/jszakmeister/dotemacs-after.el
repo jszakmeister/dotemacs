@@ -130,6 +130,14 @@
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
+;; Turn on paredit for lisp modes. This is already done for
+;; clojure in clojure-mode.
+(defun turn-on-paredit () (paredit-mode 1))
+(add-hook 'emacs-lisp-mode-hook       'turn-on-paredit)
+(add-hook 'lisp-mode-hook             'turn-on-paredit)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-paredit)
+(add-hook 'scheme-mode-hook           'turn-on-paredit)
+
 ;; Turn off the system beep
 (setq visible-bell t)
 
