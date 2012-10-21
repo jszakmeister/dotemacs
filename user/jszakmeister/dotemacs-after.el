@@ -9,7 +9,7 @@
 
 (require 'highlight-parentheses)
 
-; Customize the highlighting of parens.  The default was to confusing
+; Customize the highlighting of parens.  The default was too confusing
 ; to look at.
 (setq hl-paren-colors
       '("DarkOrange1" "firebrick3" "firebrick4" "IndianRed4"))
