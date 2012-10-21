@@ -86,6 +86,7 @@
     json
     less-css-mode
     lorem-ipsum
+    magit
     markdown-mode
     marmalade
     melpa
