@@ -293,3 +293,7 @@
 
 ;; Color grep
 (require 'color-moccur)
+
+(add-hook 'find-file-hook
+          (lambda ()
+            (setq default-directory command-line-default-directory)))
